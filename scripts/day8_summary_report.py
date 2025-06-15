@@ -12,7 +12,7 @@ def summarize_traffic(pcap_file):
             proto=pkt[IP].proto
             protocol_counter[proto]+=1
 
-    with open("final_summary.txt","w")as f:
+    with open("C:/Users/Suzain/Desktop/NetSpy/outputs/final_summary.txt","w")as f:
         f.write(f"Total Packets: {len(packets)}\n\n")
         f.write("Top IP Talkers:\n")
         for ip,count in ip_counter.most_common(5):
@@ -23,4 +23,4 @@ def summarize_traffic(pcap_file):
             f.write(f"Protocol {proto}: {count}\n")
 
 
-summarize_traffic("C:/Users/Suzain/Desktop/NetSpy/captures/day2_mixed_capture.pcap")
+summarize_traffic("C:/Users/Suzain/Desktop/NetSpy/captures/testcapture.pcap")

@@ -1,81 +1,241 @@
-# 🕵️‍♀️ NetSpy: A Beginner-Friendly Network Packet Sniffer & Analyzer
 
-NetSpy is a Python-based project designed for learning **network sniffing, protocol analysis, and visualization** using **Scapy** and **Wireshark**. It captures, filters, saves, and visualizes network traffic step by step.
+---
+
+```markdown
+# 🕵️‍♀️ NetSpy: Network Packet Analyzer with Scapy & Wireshark
+
+NetSpy is a beginner-friendly network packet analysis project using **Scapy** and **Wireshark**. It captures live packets, filters specific types, visualizes suspicious behavior, and saves reports — all while helping you learn real-world network monitoring!
+
+---
+
+## 📁 Folder Structure
+
+```
+
+NetSpy/
+├── captures/             # Saved .pcap capture files
+├── outputs/              # Text reports generated
+├── scripts/              # All Python scripts used
+├── screenshots/          # Charts and visual summaries
+├── README.md             # Project documentation
+
+````
+
+---
+
+## 🧰 Tools Used
+
+- 🐍 Python 3.x  
+- 📦 Scapy (`pip install scapy`)
+- 🧠 Matplotlib (`pip install matplotlib`)
+- 🧪 Wireshark (GUI to visualize `.pcap` files)
+
+---
+
+## 📅 Learning Journey
+
+### ✅ Day 1: Getting Started with Scapy & Sniffing
+
+- Captured 10 live packets using:
+  ```python
+  from scapy.all import sniff
+
+  def callback(pkt):
+      print(pkt.summary())
+
+  sniff(prn=callback, count=10)
+````
+
+* Learned:
+
+  * How packets look in terminal
+  * What layers (IP, TCP, etc.) are
+
+---
+
+### ✅ Day 2: Filters and Saving Captures
+
+* Applied BPF filter to sniff only HTTP (port 80) traffic:
+
+  ```python
+  sniff(filter="tcp port 80", count=20)
+  ```
+* Saved captured packets to a `.pcap` file using:
+
+  ```python
+  wrpcap("captures/day2_http_capture.pcap", packets)
+  ```
+* Opened `.pcap` in Wireshark.
+
+---
+
+### ✅ Day 3: Advanced Layer Extraction
+
+* Extracted and printed:
+
+  * Source & destination IPs
+  * TCP ports
+* Used `.haslayer()` and direct indexing like `pkt[IP].src`
+
+---
+
+### ✅ Day 4: Visualizing Traffic
+
+* Created bar charts of SYN packets using:
+
+  ```python
+  import matplotlib.pyplot as plt
+  ```
+* Saved visuals to `screenshots/report_syn_chart.png`
+
+---
+
+### ✅ Day 5: Protocol Variety Capture
+
+* Captured a wider mix of packets: HTTP, DNS, ICMP, etc.
+* Used filters:
+
+  ```bash
+  tcp or udp or icmp
+  ```
+
+---
+
+### ✅ Day 6: DNS and Port Scan Detection
+
+* Detected:
+
+  * SYN floods (possible port scan)
+  * Top 10 DNS queries
+* Saved findings to `outputs/suspicious_report.txt`
+
+---
+
+### ✅ Day 7: Custom .pcap Testing
+
+* Downloaded sample `.pcap` files from:
+
+  * [https://wiki.wireshark.org/SampleCaptures](https://wiki.wireshark.org/SampleCaptures)
+* Used them as input to test analyzer scripts.
+
+---
+
+### ✅ Day 8: Combined Analysis Script
+
+```python
+from scapy.all import rdpcap, TCP, IP, DNSQR
+from collections import defaultdict
+import matplotlib.pyplot as plt
+```
+
+* Final report saved to:
+
+  * `outputs/final_report.txt`
+  * `screenshots/report_syn_chart.png`
+
+---
+
+### ✅ Day 9: Project Cleanup
+
+* All scripts moved to `scripts/`
+* Reorganized folders and tested paths
+* Verified `.pcap` loading and saving works on Windows
+
+---
+
+### ✅ Day 10: Final Upload & GitHub
+
+* Committed all files with:
+
+  ```
+  git add .
+  git commit -m "Completed NetSpy: Full network analyzer with Scapy and Wireshark"
+  git push origin main
+  ```
+
+---
+
+## 🚀 How to Run the Project
+
+1. Clone this repo:
+
+   ```bash
+   git clone https://github.com/<your-username>/NetSpy.git
+   ```
+
+2. Navigate inside:
+
+   ```bash
+   cd NetSpy/scripts
+   ```
+
+3. Run a script:
+
+   ```bash
+   python analyze_and_report.py
+   ```
+
+4. Open `.pcap` files in Wireshark:
+
+   ```bash
+   wireshark ../captures/testcapture.pcap
+   ```
+
+---
+
+## 📊 Sample Output (Screenshot)
+
+![Chart Screenshot](screenshots/report_syn_chart.png)
+
+---
+
+## ✍️ Author
+
+Made with ❤️ by **Suzain** as a 10-day Scapy + Wireshark beginner project.
+
+---
+🧠 What I Learned
+Scapy packet crafting & sniffing
+
+Protocol inspection (TCP, DNS)
+
+Reading .pcap files programmatically
+
+Visualizing data with matplotlib
+
+Detecting anomalies like port scans
+
+GitHub project structuring & documentation
+
+📌 Future Work
+Real-time alerts
+
+Web-based dashboard (Flask + Scapy)
+
+Email notifications on port scans
+
+Extend protocol support (ICMP, HTTP)
+
+🙌 Special Thanks
+Thanks to the Scapy community and Wireshark for great tools that make network forensics beginner-friendly.
+
+
+📜 License
+MIT License — feel free to fork, learn, and build on it!
+
+yaml
+Copy code
 
 ---
 
 
-## 🧠 Learning Journey
-
-### ✅ Day 1 – Basic Packet Sniffing
-
-- Used Scapy’s `sniff()` to capture packets on the local network
-- Displayed simple packet summaries (protocol, source, destination)
-- Introduced how to save `.pcap` files
-- 🔧 Scripts:
-  - `scripts/day1_sniffer.py`
-  - `scripts/day1_hw_sniffer.py`
-
-### ✅ Day 2 – Filtering and Saving Specific Protocols
-
-- Captured only **DNS (port 53)** and **HTTP (port 80)** traffic using filters
-- Parsed packets using `.haslayer("IP")` and `.haslayer("TCP"/"UDP")`
-- Saved captures to `captures/day2_dns_capture.pcap` and `day2_http_capture.pcap`
-- Wrote a script to combine & filter DNS + HTTP in one capture
-- 🔧 Scripts:
-  - `scripts/day2_dns_capture.py`
-  - `scripts/day2_filtered_saver.py`
-- 📁 Output:
-  - `captures/day2_dns_capture.pcap`
-  - `captures/day2_http_capture.pcap`
-  - `captures/day2_mixed_capture.pcap`
-
-### ✅ Day 3 – Parsing & Summarizing Captures
-
-- Opened `.pcap` files using Scapy’s `rdpcap()`
-- Parsed DNS requests (`dns.qd.qname`) and HTTP requests (`Raw` layer)
-- Printed summarized results from `day2_mixed_capture.pcap`
-- Learned to extract readable data from deeper packet layers
-- 🔧 Script:
-  - `scripts/day3_dns_http_summary.py`
-
-### ✅ Day 4 – Visualizing Traffic (Basic Stats)
-
-- Used `matplotlib` to create a bar chart of protocol counts
-- Counted TCP/UDP/ICMP from capture file and visualized results
-- Introduced `Counter()` from `collections` for frequency count
-- 🔧 Script:
-  - `scripts/day4_protocol_visualizer.py`
-- 🖼️ Output:
-  - `screenshots/day4_protocol_chart.png` (if saved manually)
-
-## Day 5 – IP & Port Analysis
-
-Analyzed top Source/Destination IPs and Ports using Scapy and visualized them using matplotlib. Output was both printed and plotted.
-
-Script: `scripts/day5_ip_port_analysis.py`
-
----
-
-## Day 6 – Advanced Packet Size Visualization
-
-Created line plots showing packet size over time. This helps understand traffic spikes and trends.
-
-Script: `scripts/day6_packet_size_timeline.py`
-
----
-
-## 🛠️ How to Run
-
-Make sure to activate your virtual environment and install dependencies:
-
-```bash
-pip install -r requirements.txt
-
-To sniff or visualize packets:
 
 
-python scripts/day1_sniffer.py
-python scripts/day2_dns_capture.py
-python scripts/day3_dns_http_summary.py
-python scripts/day4_protocol_visualizer.py
+
+
+
+
+
+
+
+```

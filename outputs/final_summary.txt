@@ -1,8 +1,12 @@
-Total Packets: 50
+Total Packets: 203
 
 Top IP Talkers:
-192.168.1.103:31
-192.168.1.102:19
+192.168.1.101:86
+216.58.200.195:17
+52.182.143.214:16
+76.223.90.71:16
+142.250.67.67:15
 
 Protocol Usage:
-Protocol 6: 50
+Protocol 6: 82
+Protocol 17: 118

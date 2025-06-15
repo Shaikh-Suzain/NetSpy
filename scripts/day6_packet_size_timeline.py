@@ -17,6 +17,7 @@ def packet_size_over_time(pcap_file):
     plt.ylabel("Packet Size (bytes)")
     plt.tight_layout()
     plt.show()
+    plt.savefig("C:/Users/Suzain/Desktop/NetSpy/screenshots/day6_chart.png")
 
 if __name__ == "__main__":
-    packet_size_over_time("C:/Users/Suzain/Desktop/NetSpy/captures/day2_mixed_capture.pcap")
+    packet_size_over_time("C:/Users/Suzain/Desktop/NetSpy/captures/testcapture.pcap")

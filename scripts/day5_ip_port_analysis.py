@@ -32,7 +32,8 @@ def analyze_ip_port(pcap_file):
         plt.xlabel("IP Address")
         plt.ylabel("Count")
         plt.tight_layout()
+        plt.savefig("C:/Users/Suzain/Desktop/NetSpy/screenshots/day5_chart.png")
         plt.show()
 
 if __name__ == "__main__":
-    analyze_ip_port("C:/Users/Suzain/Desktop/NetSpy/captures/day7_Variety_capture.pcap")
+    analyze_ip_port("C:/Users/Suzain/Desktop/NetSpy/captures/testcapture.pcap")

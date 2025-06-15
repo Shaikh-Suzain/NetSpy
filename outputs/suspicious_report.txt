@@ -1,1 +1,4 @@
 SYN Packet Count (Potential Port Scan):
+192.168.1.101-> 2 SYNs
+172.64.155.209-> 1 SYNs
+76.223.90.71-> 1 SYNs
