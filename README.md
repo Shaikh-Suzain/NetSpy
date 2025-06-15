@@ -10,7 +10,6 @@ NetSpy is a beginner-friendly network packet analysis project using **Scapy** an
 
 ## 📁 Folder Structure
 
-```
 
 NetSpy/
 ├── captures/             # Saved .pcap capture files
@@ -18,8 +17,6 @@ NetSpy/
 ├── scripts/              # All Python scripts used
 ├── screenshots/          # Charts and visual summaries
 ├── README.md             # Project documentation
-
-````
 
 ---
 
@@ -29,7 +26,6 @@ NetSpy/
 - 📦 Scapy (`pip install scapy`)
 - 🧠 Matplotlib (`pip install matplotlib`)
 - 🧪 Wireshark (GUI to visualize `.pcap` files)
-
 ---
 
 ## 📅 Learning Journey
@@ -193,49 +189,30 @@ import matplotlib.pyplot as plt
 
 Made with ❤️ by **Suzain** as a 10-day Scapy + Wireshark beginner project.
 
----
-🧠 What I Learned
-Scapy packet crafting & sniffing
-
-Protocol inspection (TCP, DNS)
-
-Reading .pcap files programmatically
-
-Visualizing data with matplotlib
-
-Detecting anomalies like port scans
-
-GitHub project structuring & documentation
-
-📌 Future Work
-Real-time alerts
-
-Web-based dashboard (Flask + Scapy)
-
-Email notifications on port scans
-
-Extend protocol support (ICMP, HTTP)
-
-🙌 Special Thanks
-Thanks to the Scapy community and Wireshark for great tools that make network forensics beginner-friendly.
-
-
-📜 License
-MIT License — feel free to fork, learn, and build on it!
-
-yaml
-Copy code
+### 💡 What I Learned
+- Scapy packet crafting & sniffing
+- TCP & DNS packet inspection
+- Reading and analyzing `.pcap` files
+- Visualizing results with matplotlib
+- Writing structured project documentation
 
 ---
 
+## 🚀 Future Improvements
 
+- 🔔 Real-time alerts on suspicious traffic
+- 🌐 Web-based dashboard (Flask + Scapy)
+- 📧 Email notifications on port scans
+- ➕ Extend protocol support (ICMP, HTTP, etc.)
 
+---
 
+## 🙏 Special Thanks
 
+To the **Scapy** and **Wireshark** communities for creating such powerful, open, and beginner-friendly tools.
 
+---
 
+## 📄 License
 
-
-
-
-```
+This project is licensed under the MIT License — feel free to **fork**, **learn**, and **build** on it!
