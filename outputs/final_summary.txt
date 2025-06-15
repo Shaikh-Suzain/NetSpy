@@ -1,0 +1,8 @@
+Total Packets: 50
+
+Top IP Talkers:
+192.168.1.103:31
+192.168.1.102:19
+
+Protocol Usage:
+Protocol 6: 50
