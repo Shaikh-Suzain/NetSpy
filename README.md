@@ -4,18 +4,6 @@ NetSpy is a Python-based project designed for learning **network sniffing, proto
 
 ---
 
-## 📁 Project Structure
-
-NetSpy/
-├── captures/ # Saved .pcap and .pcapng files from each day
-├── screenshots/ # Visual outputs, screenshots, bar graphs
-├── scripts/ # Python scripts for each day (sniffers, analyzers, visualizers)
-├── README.md # This file
-├── .gitignore # Ignores temp files and captures from version control
-├── requirements.txt # List of Python packages
-
-
----
 
 ## 🧠 Learning Journey
 
