@@ -20,7 +20,7 @@ def Visualize_protocols(pcap_file):
         elif pkt.haslayer("UDP"):
             proto_counts["UDP"]+=1
         else:
-            proto_counts["Oher"]+=1
+            proto_counts["Other"]+=1
     
     labels=proto_counts.keys()
     values=proto_counts.values()

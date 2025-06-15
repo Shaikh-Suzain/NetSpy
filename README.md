@@ -61,6 +61,20 @@ NetSpy/
 - 🖼️ Output:
   - `screenshots/day4_protocol_chart.png` (if saved manually)
 
+## Day 5 – IP & Port Analysis
+
+Analyzed top Source/Destination IPs and Ports using Scapy and visualized them using matplotlib. Output was both printed and plotted.
+
+Script: `scripts/day5_ip_port_analysis.py`
+
+---
+
+## Day 6 – Advanced Packet Size Visualization
+
+Created line plots showing packet size over time. This helps understand traffic spikes and trends.
+
+Script: `scripts/day6_packet_size_timeline.py`
+
 ---
 
 ## 🛠️ How to Run
